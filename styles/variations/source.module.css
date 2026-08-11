@@ -1,0 +1,314 @@
+/* Original — Editorial Letter
+   따뜻한 종이 질감, 세리프 제목, 편지지처럼 읽히는 레이아웃 */
+
+.page {
+  --ink: #2a2118;
+  --muted: #6b5c4c;
+  --paper: #efe6d6;
+  --rule: #c9b79a;
+  --accent: #9a3412;
+  position: relative;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), "Apple SD Gothic Neo", sans-serif;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--rule);
+  pointer-events: none;
+}
+
+.header,
+.main,
+.footer {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.logo {
+  font-family: var(--font-serif), serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.navLink {
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.navLink:hover,
+.link:hover,
+.workTitle:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.main {
+  padding-bottom: 4rem;
+}
+
+.hero {
+  padding: 1rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.kicker {
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(3rem, 8vw, 5.2rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.titleEn {
+  margin: 0.35rem 0 1.5rem;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.95rem;
+}
+
+.tagline {
+  margin: 0 0 1.25rem;
+  max-width: 28rem;
+  font-family: var(--font-serif), serif;
+  font-size: 1.35rem;
+  line-height: 1.55;
+}
+
+.status {
+  display: inline-block;
+  margin: 0;
+  padding: 0.2rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.section {
+  padding: 2.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sectionLabel {
+  margin: 0 0 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.bio {
+  margin: 0 0 1.5rem;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.bio::first-letter {
+  float: left;
+  margin-right: 0.4rem;
+  font-family: var(--font-serif), serif;
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 0.85;
+  color: var(--accent);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.metaItem {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.skillGroups {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.skillGroup {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.skillCategory {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.skill:not(:last-child)::after {
+  content: " · ";
+  color: var(--rule);
+}
+
+.workList {
+  display: grid;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workItem {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.workItem:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.workTitle {
+  font-family: var(--font-serif), serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.workDesc {
+  margin: 0.5rem 0 0.75rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.workTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workTag {
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+}
+
+.contactBlock {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.emailButton {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-family: var(--font-serif), serif;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--accent);
+}
+
+.emailButton:hover,
+.emailButton:focus-visible {
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footerNote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .page::before {
+    inset: 8px;
+  }
+
+  .header,
+  .main,
+  .footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .skillGroup {
+    grid-template-columns: 1fr;
+  }
+}

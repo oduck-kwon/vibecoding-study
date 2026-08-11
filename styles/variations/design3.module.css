@@ -1,0 +1,326 @@
+/* Variation 3 — Vibrant Gradient
+   네온 오브, 글래스 카드, 에너지 있는 바이브 */
+
+.page {
+  --bg: #070b16;
+  --fg: #eef4ff;
+  --muted: #9aa6c3;
+  --cyan: #67e8f9;
+  --violet: #c4b5fd;
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: clip;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), "Apple SD Gothic Neo", sans-serif;
+}
+
+.page::before,
+.page::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.page::before {
+  top: -8rem;
+  right: -4rem;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(103, 232, 249, 0.22);
+}
+
+.page::after {
+  bottom: 10%;
+  left: -6rem;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(167, 139, 250, 0.22);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+}
+
+.logo {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--cyan);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+}
+
+.navLink {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--fg);
+}
+
+.main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4.5rem;
+}
+
+.hero {
+  padding: 3.5rem 0 2.5rem;
+}
+
+.kicker {
+  margin: 0 0 1rem;
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(3.2rem, 9vw, 5.8rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.titleEn {
+  margin: 0.45rem 0 0;
+  color: var(--violet);
+  font-family: var(--font-mono), monospace;
+}
+
+.tagline {
+  margin: 1.5rem 0 1.25rem;
+  max-width: 18ch;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.status {
+  display: inline-block;
+  margin: 0;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(103, 232, 249, 0.18), rgba(196, 181, 253, 0.18));
+  color: var(--cyan);
+  font-size: 0.82rem;
+}
+
+.section {
+  margin-bottom: 1rem;
+  padding: 1.4rem 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.sectionLabel {
+  margin: 0 0 1rem;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.bio {
+  margin: 0 0 1.15rem;
+  color: #d5def3;
+  line-height: 1.8;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.metaItem {
+  margin: 0;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.skillGroups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.skillGroup {
+  padding: 0.85rem;
+  border-radius: 16px;
+  background: rgba(7, 11, 22, 0.35);
+}
+
+.skillCategory {
+  margin: 0 0 0.55rem;
+  color: var(--violet);
+  font-size: 0.78rem;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill {
+  color: var(--fg);
+  font-size: 0.82rem;
+}
+
+.workList {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workItem {
+  padding: 1rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.workTitle {
+  color: var(--fg);
+  font-size: 1.12rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.workTitle:hover {
+  color: var(--cyan);
+}
+
+.workDesc {
+  margin: 0.4rem 0 0.7rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.workTags,
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workTag {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(103, 232, 249, 0.12);
+  color: var(--cyan);
+  font-size: 0.72rem;
+}
+
+.contactBlock {
+  display: grid;
+  gap: 1rem;
+}
+
+.emailButton {
+  width: fit-content;
+  padding: 0.9rem 1.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22d3ee, #a78bfa);
+  color: #081018;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.25);
+}
+
+.emailButton:hover,
+.emailButton:focus-visible {
+  filter: brightness(1.08);
+}
+
+.link {
+  color: var(--violet);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--cyan);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 2rem;
+}
+
+.footerNote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .header,
+  .main,
+  .footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav {
+    gap: 0;
+  }
+
+  .skillGroups {
+    grid-template-columns: 1fr;
+  }
+}
