@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans_KR, Noto_Serif_KR } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const sans = IBM_Plex_Sans_KR({
@@ -33,16 +32,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ko"
       className={`${sans.variable} ${mono.variable} ${serif.variable} h-full antialiased`}
     >
-      <body className="min-h-full">
-        {/* AdSense 사이트 소유권 확인 — head에 가까운 beforeInteractive로 삽입 */}
-        <Script
+      <head>
+        {/* AdSense 소유권 확인: Google이 요구하는 대로 <head>에 원본 script 삽입 */}
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8334512491249788"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
         />
-        {children}
-      </body>
+      </head>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
