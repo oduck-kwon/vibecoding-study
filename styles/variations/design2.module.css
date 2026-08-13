@@ -45,6 +45,8 @@
 
 .nav {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 1.4rem;
 }
 
@@ -286,10 +288,121 @@
   text-decoration: none;
 }
 
+.guideArticle {
+  max-width: 42rem;
+}
+
+.guideTitle {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+}
+
+.guideLead,
+.guideText,
+.guideClosing {
+  margin: 0 0 1rem;
+  color: #d9d0c4;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.guideLead {
+  margin-bottom: 1.75rem;
+  color: #e8dfd2;
+}
+
+.guideBlock {
+  margin: 0 0 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.guideHeading {
+  margin: 0 0 0.85rem;
+  color: var(--amber);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.guideSteps,
+.guideMistakes,
+.guideTools,
+.guideChecklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.guideStep,
+.guideMistake,
+.guideTool {
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(20, 18, 16, 0.7);
+}
+
+.guideStepTitle,
+.guideToolName {
+  display: block;
+  margin: 0 0 0.55rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.guideCompare {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.guideCompareLabel {
+  display: inline-block;
+  min-width: 3.5rem;
+  margin-right: 0.4rem;
+  color: var(--amber);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.guideChecklist li {
+  position: relative;
+  padding-left: 1.35rem;
+  color: #d9d0c4;
+  line-height: 1.7;
+}
+
+.guideChecklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid var(--amber);
+  border-radius: 3px;
+}
+
+.guideClosing {
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: #e8dfd2;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   max-width: 980px;
   margin: 0 auto;
   padding: 1.25rem 1.5rem 2rem;
@@ -300,6 +413,13 @@
   margin: 0;
   color: var(--muted);
   font-size: 0.8rem;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
 }
 
 @keyframes pulse {

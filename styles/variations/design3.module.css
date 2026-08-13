@@ -293,10 +293,118 @@
   color: var(--cyan);
 }
 
+.guideArticle {
+  max-width: 42rem;
+}
+
+.guideTitle {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+}
+
+.guideLead,
+.guideText,
+.guideClosing {
+  margin: 0 0 0.95rem;
+  color: #d5def3;
+  line-height: 1.8;
+}
+
+.guideLead {
+  margin-bottom: 1.35rem;
+  color: var(--fg);
+}
+
+.guideBlock {
+  margin: 0 0 1.1rem;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(7, 11, 22, 0.35);
+}
+
+.guideHeading {
+  margin: 0 0 0.7rem;
+  color: var(--cyan);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.guideSteps,
+.guideMistakes,
+.guideTools,
+.guideChecklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.guideStep,
+.guideMistake,
+.guideTool {
+  padding: 0.85rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.guideStepTitle,
+.guideToolName {
+  display: block;
+  margin: 0 0 0.4rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.guideCompare {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.guideCompareLabel {
+  display: inline-block;
+  min-width: 3.5rem;
+  margin-right: 0.35rem;
+  color: var(--violet);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guideChecklist li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: #d5def3;
+  line-height: 1.7;
+}
+
+.guideChecklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+}
+
+.guideClosing {
+  margin-top: 0.35rem;
+  color: var(--fg);
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   max-width: 960px;
   margin: 0 auto;
   padding: 0.5rem 1.5rem 2rem;
@@ -306,6 +414,13 @@
   margin: 0;
   color: var(--muted);
   font-size: 0.8rem;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
 }
 
 @media (max-width: 768px) {

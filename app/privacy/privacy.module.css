@@ -1,0 +1,117 @@
+.page {
+  --bg: #0b0a09;
+  --fg: #f3ebe0;
+  --muted: #9a9186;
+  --amber: #e0b07a;
+  --line: rgba(224, 176, 122, 0.16);
+  min-height: 100vh;
+  background:
+    radial-gradient(700px 360px at 100% 0%, rgba(224, 176, 122, 0.1), transparent 55%),
+    var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), "Apple SD Gothic Neo", sans-serif;
+}
+
+.header,
+.main,
+.footer {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  color: var(--amber);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.back {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.back:hover,
+.logo:hover {
+  color: var(--amber);
+}
+
+.main {
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  color: var(--amber);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.updated {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.intro,
+.text {
+  margin: 0 0 1rem;
+  color: #d9d0c4;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.heading {
+  margin: 0 0 0.85rem;
+  color: var(--amber);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 768px) {
+  .header,
+  .main,
+  .footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

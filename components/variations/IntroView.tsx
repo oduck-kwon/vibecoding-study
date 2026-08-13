@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { guide } from "@/lib/guide";
 import { useIntroActions } from "./useIntroActions";
 import type { IntroPageProps, IntroStyles } from "./types";
 
@@ -24,6 +25,9 @@ export default function IntroView({ profile, styles }: IntroViewProps) {
         <nav className={styles.nav} aria-label="페이지 섹션">
           <a className={styles.navLink} href="#about">
             소개
+          </a>
+          <a className={styles.navLink} href="#guide">
+            가이드
           </a>
           <a className={styles.navLink} href="#work">
             작업
@@ -68,6 +72,91 @@ export default function IntroView({ profile, styles }: IntroViewProps) {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className={styles.section} id="guide" aria-labelledby="guide-heading">
+          <h2 className={styles.sectionLabel} id="guide-heading">
+            가이드
+          </h2>
+          <article className={styles.guideArticle}>
+            <h3 className={styles.guideTitle}>{guide.title}</h3>
+            <p className={styles.guideLead}>{guide.lead}</p>
+
+            {guide.sections.map((section) => (
+              <div className={styles.guideBlock} key={section.id} id={`guide-${section.id}`}>
+                <h4 className={styles.guideHeading}>{section.heading}</h4>
+                {section.paragraphs.map((paragraph) => (
+                  <p className={styles.guideText} key={paragraph.slice(0, 24)}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ))}
+
+            <div className={styles.guideBlock} id="guide-steps">
+              <h4 className={styles.guideHeading}>실전 5단계 워크플로</h4>
+              <ol className={styles.guideSteps}>
+                {guide.steps.map((step) => (
+                  <li className={styles.guideStep} key={step.title}>
+                    <p className={styles.guideStepTitle}>{step.title}</p>
+                    <p className={styles.guideText}>{step.body}</p>
+                    <p className={styles.guideCompare}>
+                      <span className={styles.guideCompareLabel}>Before</span>
+                      {step.before}
+                    </p>
+                    <p className={styles.guideCompare}>
+                      <span className={styles.guideCompareLabel}>After</span>
+                      {step.after}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className={styles.guideBlock} id="guide-mistakes">
+              <h4 className={styles.guideHeading}>자주 하는 실수 3가지</h4>
+              <ul className={styles.guideMistakes}>
+                {guide.mistakes.map((item) => (
+                  <li className={styles.guideMistake} key={item.title}>
+                    <p className={styles.guideStepTitle}>{item.title}</p>
+                    <p className={styles.guideText}>
+                      <strong>문제:</strong> {item.problem}
+                    </p>
+                    <p className={styles.guideText}>
+                      <strong>해결:</strong> {item.fix}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.guideBlock} id="guide-tools">
+              <h4 className={styles.guideHeading}>도구 선택 기준</h4>
+              <p className={styles.guideText}>
+                도구보다 범위 제한이 더 중요합니다. 다만 초안 속도를 안정적으로 유지하려면
+                아래 조합이 실용적입니다.
+              </p>
+              <ul className={styles.guideTools}>
+                {guide.tools.map((tool) => (
+                  <li className={styles.guideTool} key={tool.name}>
+                    <span className={styles.guideToolName}>{tool.name}</span>
+                    <span className={styles.guideText}>{tool.reason}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.guideBlock} id="guide-checklist">
+              <h4 className={styles.guideHeading}>다음에 해볼 체크리스트</h4>
+              <ul className={styles.guideChecklist}>
+                {guide.checklist.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <p className={styles.guideClosing}>{guide.closing}</p>
+          </article>
         </section>
 
         <section className={styles.section} id="work" aria-labelledby="work-heading">
@@ -128,9 +217,14 @@ export default function IntroView({ profile, styles }: IntroViewProps) {
         <p className={styles.footerNote}>
           © {year} {profile.nameEn}
         </p>
-        <Link className={styles.link} href="/variations">
-          디자인 비교
-        </Link>
+        <div className={styles.footerLinks}>
+          <Link className={styles.link} href="/privacy">
+            개인정보처리방침
+          </Link>
+          <Link className={styles.link} href="/variations">
+            디자인 비교
+          </Link>
+        </div>
       </footer>
     </div>
   );

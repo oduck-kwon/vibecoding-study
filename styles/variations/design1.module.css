@@ -242,9 +242,124 @@
   color: var(--ink);
 }
 
+.guideArticle {
+  max-width: 44rem;
+}
+
+.guideTitle {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+}
+
+.guideLead,
+.guideText,
+.guideClosing {
+  margin: 0 0 1rem;
+  max-width: 42rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+.guideLead {
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.guideBlock {
+  margin: 0 0 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.guideHeading {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.guideSteps,
+.guideMistakes,
+.guideTools,
+.guideChecklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.guideStep,
+.guideMistake {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.guideStep:last-child,
+.guideMistake:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.guideStepTitle,
+.guideToolName {
+  display: block;
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+}
+
+.guideCompare {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.guideCompareLabel {
+  display: inline-block;
+  min-width: 3.5rem;
+  margin-right: 0.35rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.guideTool {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0.75rem;
+}
+
+.guideChecklist li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.guideChecklist li::before {
+  content: "/";
+  position: absolute;
+  left: 0;
+  color: #cfcfcf;
+}
+
+.guideClosing {
+  margin-top: 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1.25rem 1.5rem 2rem;
@@ -254,6 +369,13 @@
   margin: 0;
   color: var(--muted);
   font-size: 0.8rem;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
 }
 
 @media (max-width: 768px) {
@@ -268,6 +390,11 @@
   .skillGroup {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+  }
+
+  .guideTool {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
   }
 
   .hero {
